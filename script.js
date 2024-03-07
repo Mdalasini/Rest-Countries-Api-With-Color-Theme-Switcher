@@ -78,7 +78,6 @@ async function fetchAndProcessData(url) {
       // Loop through the data
       for (let i = 0; i < data.length; i++) {
         const item = data[i];
-        console.log(item.alpha3Code)
    
         // TODO 2: For each item in the list, get the following values based on the key
         const name = item.name;
