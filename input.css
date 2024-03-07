@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 country-details {
-    @apply bg-neutral-white shadow-md shadow-light-mode-dark-gray rounded-lg box-border flex-grow-0 flex-shrink-0 basis-1/4 min-w-[250px] max-w-[300px] max-h-[350px] hover:cursor-pointer pb-14;
+    @apply bg-neutral-white shadow-md shadow-light-mode-dark-gray rounded-lg box-border flex-grow-0 flex-shrink-0 basis-1/4 min-w-[250px] max-w-[300px] h-[400px] hover:cursor-pointer pb-14;
+}
+
+country-details img{
+    @apply rounded-t-lg h-[200px] w-full
 }
 
 country-details h4 {

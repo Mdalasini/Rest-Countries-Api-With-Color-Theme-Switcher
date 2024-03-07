@@ -15,11 +15,6 @@ class CountryDetails extends LitElement {
             margin-left: 1rem/* 16px */;
         }
 
-        ::slotted(img) {
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-        }
-
         ::slotted(h4) {
             font-weight: 800;
             font-size: 18px;
