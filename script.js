@@ -76,7 +76,7 @@ async function fetchAndProcessData(url) {
       const data = await response.json();
    
       // Loop through the data
-      for (let i = 0; i < 1; i++) {
+      for (let i = 0; i < data.length; i++) {
         const item = data[i];
         console.log(item.alpha3Code)
    
