@@ -31,7 +31,7 @@
         <!-- DETAILS -->
         <section class="mt-24 container mx-auto px-5">
             <!-- BACK BUTTON -->
-            <button class="flex items-center gap-x-2 shadow-sm shadow-light-mode-dark-gray py-2 px-7 rounded-md font-light">
+            <button id="back-button" class="flex items-center gap-x-2 shadow-sm shadow-light-mode-dark-gray py-2 px-7 rounded-md font-light">
                 <span class="material-symbols-outlined">
                     arrow_back
                 </span>
@@ -41,52 +41,33 @@
             <!-- COUNTRY -->
             <div class="flex items-center mt-20 gap-x-24">
                 <!-- FLAG -->
-                <img id="country-flag" src="https://flagcdn.com/aq.svg" alt="" class="max-w-[660px]">
+                <img id="country-flag" src="" alt="" class="max-w-[660px]">
                 <!-- INFO -->
                 <div class="w-full">
-                    <h2 id="country-name" class="font-bold text-2xl mb-10">Argentina</h2>
+                    <h2 id="country-name" class="font-bold text-2xl mb-10">...</h2>
                     <div class="flex justify-between">
                         <ul>
-                            <li class="font-normal">Native Name: <span id="country-native-name" class="font-light">Hello</span></li>
-                            <li class="font-normal">Population: <span id="country-population" class="font-light">Hello</span></li>
-                            <li class="font-normal">Region: <span id="country-region" class="font-light">Hello</span></li>
-                            <li class="font-normal">Sub Region: <span id="country-sub-region" class="font-light">Hello</span></li>
-                            <li class="font-normal">Capital: <span id="country-capital" class="font-light">Hello</span></li>
+                            <li class="font-normal">Native Name: <span id="country-native-name" class="font-light">...</span></li>
+                            <li class="font-normal">Population: <span id="country-population" class="font-light">...</span></li>
+                            <li class="font-normal">Region: <span id="country-region" class="font-light">...</span></li>
+                            <li class="font-normal">Sub Region: <span id="country-sub-region" class="font-light">...</span></li>
+                            <li class="font-normal">Capital: <span id="country-capital" class="font-light">...</span></li>
                         </ul>
                         <ul>
-                            <li class="font-normal">Top Level Domain: <span id="country-domain" class="font-light">Hello</span></li>
-                            <li class="font-normal">Currencies: <span id="country-currencies" class="font-light">Hello</span></li>
-                            <li class="font-normal">Languages: <span id="country-languages" class="font-light">Hello</span></li>
+                            <li class="font-normal">Top Level Domain: <span id="country-domain" class="font-light">..</span></li>
+                            <li class="font-normal">Currencies: <span id="country-currencies" class="font-light">..</span></li>
+                            <li class="font-normal">Languages: <span id="country-languages" class="font-light">...</span></li>
                         </ul>
                     </div>
 
                     <div class="flex mt-20 items-start gap-x-8">
                         <p class="min-w-fit">Border Countries: </p>
-                        <ul id="country-neighbours" class="flex items-center gap-x-3 gap-y-2 flex-wrap">
-                            <li class="shadow-sm shadow-light-mode-dark-gray py-1 px-6 rounded-md">Brazil</li>
-                            <li class="shadow-sm shadow-light-mode-dark-gray py-1 px-6 rounded-md">Brazil</li>
-                        </ul>
-
+                        <ul id="country-neighbours" class="flex items-center gap-x-3 gap-y-2 flex-wrap"></ul>
                     </div>
                 </div>
             </div>
         </section>
         
         <script src="/country.js" async defer></script>
-        <script>
-            const countryFlag = document.getElementById('country-flag')
-            const countryNativeName = document.getElementById('country-native-name')
-            const countryPopulation = document.getElementById('country-population')
-            const countryRegion = document.getElementById('country-region')
-            const countrySubRegion = document.getElementById('country-sub-region')
-            const countryCapital = document.getElementById('country-capital')
-            const countryDomain = document.getElementById('country-domain')
-            const countryCurrencies = document.getElementById('country-currencies')
-            const countryLanguages = document.getElementById('country-languages')
-            const countryNeighbours = document.getElementById('country-neighbours')
-
-
-
-        </script>
     </body>
 </html>
