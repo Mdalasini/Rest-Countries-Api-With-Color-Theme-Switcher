@@ -1,5 +1,9 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 
+// Add an event listener CountryDetails
+// It should listen for a clik event 
+// When a click happens redirect the user to country.html with country as a query parameter
+// the country should be the id of the element
 class CountryDetails extends LitElement {
     static styles = css`
         * {
@@ -28,6 +32,15 @@ class CountryDetails extends LitElement {
             font-weight: 300;
         }
     `;
+    
+    constructor() {
+        super()
+        this.addEventListener('click', ()=> {
+            const countryId = this.id.replace(/-/g, ' ')
+            const url = `country.html?country=${encodeURIComponent(countryId)}`
+            window.location.href = url;
+        })
+    }
 
     render() {
         return html `
@@ -63,18 +76,20 @@ async function fetchAndProcessData(url) {
       const data = await response.json();
    
       // Loop through the data
-      for (let i = 0; i < data.length; i++) {
+      for (let i = 0; i < 1; i++) {
         const item = data[i];
+        console.log(item.alpha3Code)
    
         // TODO 2: For each item in the list, get the following values based on the key
         const name = item.name;
         const population = item.population;
         const region = item.region;
         const capital = item.capital;
+        const alpha3Code = item.alpha3Code
         const flag = item.flags.svg
    
         // TODO 3: At the end of each loop, parse all these values to a new function called renderCountry
-        renderCountry(name, population, region, capital, i, flag);
+        renderCountry(name, population, region, capital, alpha3Code, flag);
       }
     } catch (error) {
       console.error('Error fetching or processing data:', error);
@@ -89,14 +104,13 @@ async function fetchAndProcessData(url) {
 * @param {number} population - The population of the country.
 * @param {string} region - The region where the country is located.
 * @param {string} capital - The capital city of the country.
-* @param {number} index - The index of the country in the data list.
+* @param {alpha3Code} string - A unique code used to identify the country.
 * @param {string} flag - The link to the flag of the country.
 */
-function renderCountry(name, population, region, capital, index, flag) {
-    // TODO 4: Create the HTML element "country-details" with the id as {name-index}
-    const countryDetailsId = `${name.replace(/\s/g, '-')}-${index}`;
+function renderCountry(name, population, region, capital, alpha3Code, flag) {
+    // TODO 4: Create the HTML element "country-details" with the id as alpha3Code
     const countryDetails = document.createElement('country-details');
-    countryDetails.id = countryDetailsId;
+    countryDetails.id = alpha3Code;
    
     // TODO 5: Append the following children
     // An image tag with the source being the flag string and slot="country-flag"
@@ -138,20 +152,6 @@ function renderCountry(name, population, region, capital, index, flag) {
    
 // Call the fetchAndProcessData function with the URL of the JSON file
 fetchAndProcessData('/data.json');
-
-
-// I've added a new param to the renderCountry function: 
-// @param {string} flag - The link to the flag of the country.
-// Here's the logic for the renderCounty function
-// TODO 4: Create the html element "country-details" with the id as {name-index}
-// its a custom web element
-// TODO 5: Append the following children
-// An image tag with the source being the flag string and slot="country-flag"
-// A h4 tag with the text as the name and slot="country-name"
-// A span tag with the text as the population and slot="country-population"
-// Ensure that for the population its readable i.e. instead of 1000000 its 1,000,000
-// A span tag with the text as the region and slot="country-region"
-// A span tag with the text as the capital and slot="country-capital"
 
 
 
