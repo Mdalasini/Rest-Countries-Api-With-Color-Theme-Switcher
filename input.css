@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+country-details {
+    @apply bg-neutral-white shadow-md rounded-lg box-border flex-grow-0 flex-shrink-0 basis-1/4 min-w-[250px] max-w-[300px] max-h-[350px] hover:cursor-pointer pb-14;
+}
+
+country-details h4 {
+    @apply ml-4 font-bold text-lg mb-3 mt-5
+}
