@@ -51,12 +51,6 @@ class CountryDetails extends LitElement {
 
 customElements.define('country-details', CountryDetails)
 
-fetch('/data.json')
-    .then(Response => Response.json())
-    .then(data => {
-        console.log(data[0])
-    })
-
 /**
 * Fetches data from a JSON file and processes each item.
 * @async
@@ -148,5 +142,45 @@ function renderCountry(name, population, region, capital, alpha3Code, flag) {
 fetchAndProcessData('/data.json');
 
 
+const searchInput = document.getElementById('search')
+const regionSelect = document.getElementById('region-filter')
 
-   
+searchInput.addEventListener('input', ()=> {
+    const searchValue = searchInput.value
+    const selectedRegion = regionSelect.value
+    applyFilters(searchValue, selectedRegion);
+})
+
+regionSelect.addEventListener('input', ()=> {
+    const searchValue = searchInput.value
+    const selectedRegion = regionSelect.value
+    applyFilters(searchValue, selectedRegion);
+})
+
+function applyFilters(searchValue, selectedRegion) {
+    const countriesContainer = document.getElementById('countries-container');
+    const countries = countriesContainer.children;
+  
+    // Convert searchValue to lowercase for case-insensitive search
+    const searchValueLower = searchValue.toLowerCase();
+  
+    // Loop through each country element
+    for (let i = 0; i < countries.length; i++) {
+      const country = countries[i];
+      const countryName = country.querySelector('h4').innerText.toLowerCase();
+      const countryRegion = country.querySelector('span[slot="country-region"]').innerText;
+  
+      // Check if the country name includes the searchValue (case-insensitive)
+      const matchesNameFilter = countryName.includes(searchValueLower) || searchValue === '';
+  
+      // Check if the country region matches the selected region
+      const matchesRegionFilter = countryRegion === selectedRegion || selectedRegion === 'All';
+  
+      // Show or hide the country based on both filters
+      if (matchesNameFilter && matchesRegionFilter) {
+        country.style.display = ''; // Show the country
+      } else {
+        country.style.display = 'none'; // Hide the country
+      }
+    }
+}

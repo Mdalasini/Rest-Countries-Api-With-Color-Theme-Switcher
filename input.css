@@ -13,3 +13,7 @@ country-details img{
 country-details h4 {
     @apply ml-4 font-bold text-lg mb-3 mt-5
 }
+
+.border-countries {
+    @apply shadow-sm shadow-light-mode-dark-gray px-4 py-1 rounded-sm hover:cursor-pointer
+}

@@ -5,6 +5,7 @@
  */
 async function getCountryDetails() {
     try {
+      console.log("Getting Country Details")
       // Fetch the data from data.json
       const response = await fetch('data.json');
       const data = await response.json();
@@ -57,7 +58,7 @@ async function getCountryDetails() {
           const neighbour = data.find(item => item.alpha3Code === neighbourCode);
           if (neighbour) {
             const neighbourElement = document.createElement('li');
-            neighbourElement.className = 'shadow-sm shadow-light-mode-dark-gray py-1 px-6 rounded-md hover:cursor-pointer';
+            neighbourElement.className = 'border-countries';
             neighbourElement.textContent = neighbour.name;
             neighbourElement.id = neighbour.alpha3Code;
   
