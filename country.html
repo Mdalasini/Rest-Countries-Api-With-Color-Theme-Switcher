@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html class="dark">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,14 +17,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/style.css">
     </head>
-    <body class="font-normal bg-light-mode-very-light-gray">
+    <body class="font-normal bg-light-mode-very-light-gray dark:bg-dark-mode-very-dark-blue">
          <!-- HEADER -->
-         <header class="bg-neutral-white drop-shadow-sm shadow-light-mode-dark-gray">
+         <header class="bg-neutral-white drop-shadow-sm shadow-light-mode-dark-gray dark:shadow-dark-mode-very-dark-blue dark:bg-dark-mode-dark-blue dark:text-neutral-white">
             <div class="container flex justify-between items-center mx-auto p-5">
                 <h3 class="font-bold text-xl">Where in the world?</h3>
-                <div class="flex items-center hover:cursor-pointer">
-                    <span class="material-symbols-outlined scale-75">dark_mode</span>
-                    <p>Dark Mode</p>
+                <div id="light-mode-btn" class="flex items-center hover:cursor-pointer">
+                    <span id="light-mode-icon" class="material-symbols-outlined scale-75">dark_mode</span>
+                    <p id="light-mode-text">Dark Mode</p>
                 </div>
             </div>
         </header>
@@ -32,7 +32,7 @@
         <!-- DETAILS -->
         <section class="mt-24 container mx-auto px-5">
             <!-- BACK BUTTON -->
-            <button id="back-button" class="flex items-center gap-x-2 shadow-sm shadow-light-mode-dark-gray py-2 px-7 rounded-md font-light">
+            <button id="back-button" class="flex items-center gap-x-2 shadow-sm shadow-light-mode-dark-gray dark:shadow-dark-mode-very-dark-blue dark:bg-dark-mode-dark-blue dark:text-neutral-white py-2 px-7 rounded-md font-light">
                 <span class="material-symbols-outlined">
                     arrow_back
                 </span>
@@ -40,13 +40,13 @@
             </button>
 
             <!-- COUNTRY -->
-            <div class="flex items-center mt-20 gap-x-24">
+            <div class="flex flex-wrap items-center mt-20 gap-x-24">
                 <!-- FLAG -->
-                <img id="country-flag" src="" alt="" class="max-w-[660px]">
+                <img id="country-flag" src="" alt="" class="max-w-[660px] w-full">
                 <!-- INFO -->
-                <div class="w-full">
+                <div class="w-full dark:text-neutral-white">
                     <h2 id="country-name" class="font-bold text-2xl mb-10">...</h2>
-                    <div class="flex justify-between">
+                    <div class="flex flex-wrap justify-between">
                         <ul>
                             <li class="font-normal">Native Name: <span id="country-native-name" class="font-light">...</span></li>
                             <li class="font-normal">Population: <span id="country-population" class="font-light">...</span></li>
@@ -61,7 +61,7 @@
                         </ul>
                     </div>
 
-                    <div class="flex mt-20 items-start gap-x-8">
+                    <div class="flex flex-wrap mt-20 items-start gap-x-8">
                         <p class="min-w-fit">Border Countries: </p>
                         <ul id="country-neighbours" class="flex items-center gap-x-3 gap-y-2 flex-wrap"></ul>
                     </div>
@@ -69,6 +69,7 @@
             </div>
         </section>
         
+        <script src="/main.js"></script>
         <script src="/country.js" async defer></script>
     </body>
 </html>

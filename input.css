@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 country-details {
-    @apply bg-neutral-white shadow-md shadow-light-mode-dark-gray rounded-lg box-border flex-grow-0 flex-shrink-0 basis-1/4 min-w-[250px] max-w-[300px] h-[400px] hover:cursor-pointer pb-14;
+    @apply bg-neutral-white dark:bg-dark-mode-dark-blue shadow-md shadow-light-mode-dark-gray dark:shadow-dark-mode-very-dark-blue dark:text-neutral-white rounded-lg box-border flex-grow-0 flex-shrink-0 basis-1/4 min-w-[250px] max-w-[300px] h-[400px] hover:cursor-pointer pb-14;
 }
 
 country-details img{
@@ -15,5 +15,5 @@ country-details h4 {
 }
 
 .border-countries {
-    @apply shadow-sm shadow-light-mode-dark-gray px-4 py-1 rounded-sm hover:cursor-pointer
+    @apply shadow-sm shadow-light-mode-dark-gray dark:shadow-dark-mode-very-dark-blue dark:bg-dark-mode-dark-blue dark:text-neutral-white px-4 py-1 rounded-sm hover:cursor-pointer
 }

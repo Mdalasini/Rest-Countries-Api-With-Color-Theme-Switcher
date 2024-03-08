@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html class="dark">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,32 +17,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/style.css">
     </head>
-    <body class="font-normal bg-light-mode-very-light-gray">
+    <body class="font-normal bg-light-mode-very-light-gray dark:bg-dark-mode-very-dark-blue">
         <!-- HEADER -->
-        <header class="bg-neutral-white drop-shadow-sm shadow-light-mode-dark-gray">
+        <header class="bg-neutral-white drop-shadow-sm shadow-light-mode-dark-gray dark:shadow-dark-mode-very-dark-blue dark:bg-dark-mode-dark-blue dark:text-neutral-white">
             <div class="container flex justify-between items-center mx-auto p-5">
                 <h3 class="font-bold text-xl">Where in the world?</h3>
-                <div class="flex items-center hover:cursor-pointer">
-                    <span class="material-symbols-outlined scale-75">dark_mode</span>
-                    <p>Dark Mode</p>
+                <div id="light-mode-btn" class="flex items-center hover:cursor-pointer gap-x-2">
+                    <span id="light-mode-icon" class="material-symbols-outlined scale-75">light_mode</span>
+                    <p id="light-mode-text">Dark Mode</p>
                 </div>
             </div>
         </header>
 
         <section class="mt-9 container mx-auto px-5">
             <!-- FILTERS -->
-            <div class="w-full flex flex-wrap items-center justify-between">
+            <div class="w-full flex flex-wrap gap-y-10 items-center justify-between">
                 <!-- Search-Bar -->
-                <div class="bg-neutral-white w-full max-w-md flex items-center p-4 shadow-sm shadow-light-mode-dark-gray rounded-sm">
-                    <span class="material-symbols-outlined text-light-mode-dark-gray mr-4">
+                <div class="bg-neutral-white dark:bg-dark-mode-dark-blue w-full max-w-md flex items-center p-4 shadow-sm shadow-light-mode-dark-gray dark:shadow-dark-mode-very-dark-blue rounded-sm">
+                    <span class="material-symbols-outlined text-light-mode-dark-gray mr-4 dark:text-neutral-white">
                         search
                     </span>
-                    <input class="w-full focus:outline-none placeholder:text-sm" type="text" name="search" id="search" placeholder="Search for a country">
+                    <input class="w-full focus:outline-none placeholder:text-sm dark:bg-dark-mode-dark-blue dark:text-neutral-white" type="text" name="search" id="search" placeholder="Search for a country">
                 </div>
 
                 <!-- Continent Select -->
                 <form>
-                    <select id="region-filter" class="bg-neutral-white p-4 shadow-sm shadow-light-mode-dark-gray rounded-sm text-sm w-[180px]">
+                    <select id="region-filter" class="bg-neutral-white dark:bg-dark-mode-dark-blue p-4 shadow-sm shadow-light-mode-dark-gray dark:shadow-dark-mode-dark-blue dark:text-neutral-white rounded-sm text-sm w-[180px]">
                         <option value="All" selected>Filter by Region</option>
                         <option value="Africa">Africa</option>
                         <option value="Americas">Americas</option>
