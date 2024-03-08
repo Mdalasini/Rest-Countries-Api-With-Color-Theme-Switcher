@@ -5,7 +5,6 @@
  */
 async function getCountryDetails() {
     try {
-      console.log("Getting Country Details")
       // Fetch the data from data.json
       const response = await fetch('data.json');
       const data = await response.json();
