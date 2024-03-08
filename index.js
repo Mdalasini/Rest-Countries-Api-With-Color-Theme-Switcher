@@ -104,6 +104,7 @@ function renderCountry(name, population, region, capital, alpha3Code, flag) {
     // An image tag with the source being the flag string and slot="country-flag"
     const flagImage = document.createElement('img');
     flagImage.src = flag;
+    flagImage.alt = `${name} flag`
     flagImage.slot = 'country-flag';
     countryDetails.appendChild(flagImage);
    
