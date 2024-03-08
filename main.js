@@ -4,19 +4,27 @@ const lightModeBtn = document.getElementById('light-mode-btn');
 const htmlTag = document.documentElement;
 
 function updateModeUI() {
-    if (htmlTag.classList.contains('dark')) {
-        lightModeText.innerText = 'Dark Mode';
-        lightModeIcon.innerText = 'dark_mode';
-    } else {
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+    if (isDarkMode) {
+        htmlTag.classList.remove('dark');
         lightModeText.innerText = 'Light Mode';
         lightModeIcon.innerText = 'light_mode';
+    } else {
+        htmlTag.classList.add('dark');
+        lightModeText.innerText = 'Dark Mode';
+        lightModeIcon.innerText = 'dark_mode';
     }
 }
 
 lightModeBtn.addEventListener('click', () => {
     htmlTag.classList.toggle('dark');
+    console.log("switching modes")
     updateModeUI();
+
+    // Store the dark mode setting in localStorage
+    localStorage.setItem('darkMode', htmlTag.classList.contains('dark'));
 });
 
-// Check the initial state of the 'dark' class on page load
-updateModeUI();
+// Call updateModeUI on page load
+window.addEventListener('DOMContentLoaded', updateModeUI);
